@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="O Código da Clareza — 30 técnicas práticas para destravar a fala. Para quem trava, fica em branco e perde oportunidades por não conseguir se expressar."/>
+<title>O Código da Clareza | LinguagemMestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:       #0F1E35;
+  --navy-mid:   #1B2A4A;
+  --navy-light: #243558;
+  --gold:       #C9A84C;
+  --gold-light: #E8C76A;
+  --gold-pale:  #FDF6E3;
+  --cream:      #FAF8F4;
+  --white:      #ffffff;
+  --text:       #1a1a2e;
+  --muted:      #5a6a80;
+  --red:        #b83232;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.7;}
+
+/* NAV */
+.nav{background:var(--navy);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,168,76,0.12);position:sticky;top:0;z-index:100;}
+.brand-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--gold);letter-spacing:0.03em;text-decoration:none;}
+.brand-sub{font-size:0.58rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.28);display:block;margin-top:2px;}
+.nav-cta{font-size:0.78rem;font-weight:700;color:var(--gold);text-decoration:none;border:1px solid rgba(201,168,76,0.35);padding:7px 18px;border-radius:3px;letter-spacing:0.04em;transition:all 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--gold);color:var(--navy);}
+
+/* ALERT */
+.alert-bar{background:var(--gold);padding:9px 24px;text-align:center;font-size:0.78rem;font-weight:700;color:var(--navy);letter-spacing:0.07em;text-transform:uppercase;}
+
+/* HERO */
+.hero{background:var(--navy);padding:90px 24px 82px;position:relative;overflow:hidden;}
+.hero-bg-art{position:absolute;right:0;top:0;height:100%;width:auto;max-width:38%;opacity:0.07;pointer-events:none;z-index:0;}
+@media(max-width:680px){.hero-bg-art{max-width:55%;opacity:0.04;}}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 50% at 85% 15%,rgba(201,168,76,0.08) 0%,transparent 65%),radial-gradient(ellipse 35% 55% at 5% 85%,rgba(201,168,76,0.04) 0%,transparent 60%);pointer-events:none;}
+.hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+.hero-kicker{display:inline-flex;align-items:center;gap:7px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.22);color:var(--gold);font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:2px;margin-bottom:26px;opacity:0;animation:fadeUp 0.5s ease forwards 0.1s;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.9rem,7vw,5rem);font-weight:900;line-height:1.04;color:var(--white);opacity:0;animation:fadeUp 0.6s ease forwards 0.25s;}
+.hero-title .gline{color:var(--gold);display:block;}
+.hero-tagline{font-family:'DM Sans',sans-serif;font-size:clamp(1rem,2.4vw,1.18rem);font-weight:500;font-style:normal;color:rgba(255,255,255,0.58);margin:16px 0 30px;letter-spacing:0.01em;opacity:0;animation:fadeUp 0.6s ease forwards 0.4s;}
+.hero-desc{font-size:clamp(0.96rem,2vw,1.07rem);color:rgba(255,255,255,0.62);max-width:530px;line-height:1.78;margin-bottom:42px;font-weight:300;opacity:0;animation:fadeUp 0.6s ease forwards 0.52s;}
+.hero-desc strong{color:rgba(255,255,255,0.9);font-weight:600;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;opacity:0;animation:fadeUp 0.6s ease forwards 0.65s;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);font-size:1rem;font-weight:800;padding:16px 36px;border-radius:3px;text-decoration:none;letter-spacing:0.02em;transition:all 0.22s;border:2px solid var(--gold);}
+.btn-primary:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,168,76,0.3);}
+.btn-primary .arr{transition:transform 0.2s;}
+.btn-primary:hover .arr{transform:translateX(4px);}
+.hero-micro{font-size:0.78rem;color:rgba(255,255,255,0.28);}
+.hero-rule{width:52px;height:2px;background:var(--gold);margin:58px 0 0;opacity:0;animation:fadeUp 0.5s ease forwards 0.8s;}
+
+/* LAYOUT */
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+.sec{padding:80px 24px;}
+.sec-white{background:var(--white);}
+.sec-cream{background:var(--cream);}
+.sec-navy{background:var(--navy);}
+.sec-label{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:13px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.55rem);font-weight:700;line-height:1.16;color:var(--navy);margin-bottom:16px;}
+.sec-navy .sec-title{color:var(--white);}
+.sec-lead{font-size:1rem;color:var(--muted);max-width:600px;line-height:1.8;margin-bottom:48px;}
+.sec-navy .sec-lead{color:rgba(255,255,255,0.52);}
+
+/* PAIN */
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-bottom:48px;}
+.pain-card{background:var(--cream);border:1px solid #e4e0d7;border-left:4px solid var(--gold);padding:24px 20px;border-radius:2px;transition:transform 0.2s,box-shadow 0.2s;}
+.pain-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.07);}
+.pain-icon{font-size:1.5rem;margin-bottom:11px;}
+.pain-card h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.pain-card p{font-size:0.85rem;color:var(--muted);line-height:1.65;}
+.pain-quote{background:var(--navy);border-left:5px solid var(--gold);padding:28px 32px;border-radius:2px;}
+.pain-quote p{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.4vw,1.22rem);color:var(--white);font-style:italic;line-height:1.65;}
+.pain-quote strong{color:var(--gold);font-style:normal;}
+
+/* BOOK */
+.book-wrap{display:grid;grid-template-columns:210px 1fr;gap:52px;align-items:center;}
+.book-cover{background:var(--navy-mid);border-radius:6px;padding:30px 22px 26px;box-shadow:-5px 5px 0 rgba(0,0,0,0.12),-10px 10px 0 rgba(0,0,0,0.07),0 20px 48px rgba(0,0,0,0.22);position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:310px;}
+.book-cover::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);border-radius:6px 6px 0 0;}
+.book-cover::after{content:'';position:absolute;bottom:20px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(201,168,76,0.28);}
+.bc-brand{font-size:0.53rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.bc-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--white);line-height:1.08;}
+.bc-title span{color:var(--gold);display:block;}
+.bc-sub{font-size:0.6rem;color:rgba(255,255,255,0.48);line-height:1.55;font-weight:300;}
+.bc-author{font-size:0.58rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;margin-top:10px;text-transform:uppercase;}
+.feats{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:26px;}
+.feats li{display:flex;align-items:flex-start;gap:10px;font-size:0.92rem;color:var(--text);line-height:1.5;}
+.fdot{width:19px;height:19px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.58rem;font-weight:900;color:var(--navy);flex-shrink:0;margin-top:2px;}
+
+/* TECHNIQUES */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(188px,1fr));gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-bottom:48px;}
+.tech-item{background:rgba(255,255,255,0.02);padding:26px 20px;transition:background 0.2s;}
+.tech-item:hover{background:rgba(201,168,76,0.08);}
+.tech-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:rgba(201,168,76,0.18);line-height:1;margin-bottom:10px;}
+.tech-item h4{font-size:0.84rem;font-weight:700;color:var(--gold);margin-bottom:5px;line-height:1.3;}
+.tech-item p{font-size:0.77rem;color:rgba(255,255,255,0.42);line-height:1.55;}
+
+/* FOR WHO */
+.forwho-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px;}
+.forwho-card{padding:28px 24px;border-radius:3px;}
+.fwy{background:var(--gold-pale);border:1px solid rgba(201,168,76,0.26);}
+.fwn{background:#fdf4f4;border:1px solid rgba(184,50,50,0.13);}
+.forwho-card h3{font-size:0.73rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:20px;}
+.fwy h3{color:var(--gold);}
+.fwn h3{color:var(--red);}
+.forwho-card ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.forwho-card li{display:flex;align-items:flex-start;gap:8px;font-size:0.87rem;color:var(--text);line-height:1.5;}
+.chk{color:var(--gold);font-weight:900;font-size:0.92rem;flex-shrink:0;}
+.crs{color:var(--red);font-weight:900;font-size:0.92rem;flex-shrink:0;}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:18px;margin-top:44px;}
+.testi-card{background:var(--white);border:1px solid #e4e0d7;border-top:3px solid var(--gold);padding:26px 22px;border-radius:2px;transition:transform 0.2s,box-shadow 0.2s;}
+.testi-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.07);}
+.testi-stars{color:var(--gold);font-size:0.78rem;margin-bottom:12px;}
+.testi-text{font-size:0.88rem;line-height:1.72;color:var(--text);font-style:italic;margin-bottom:18px;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-av{width:37px;height:37px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--gold);flex-shrink:0;}
+.testi-name{font-size:0.82rem;font-weight:700;color:var(--navy);}
+.testi-role{font-size:0.72rem;color:var(--muted);}
+.testi-obs{text-align:center;font-size:0.7rem;color:var(--muted);margin-top:20px;font-style:italic;}
+
+/* OFFER */
+.offer-card{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:50px 42px;text-align:center;max-width:530px;margin:0 auto;}
+.offer-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.67rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:24px;}
+.offer-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:8px;}
+.offer-title span{color:var(--gold);}
+.offer-sub{font-size:0.83rem;color:rgba(255,255,255,0.38);margin-bottom:30px;}
+.price-from{font-size:0.84rem;color:rgba(255,255,255,0.28);text-decoration:line-through;margin-bottom:4px;}
+.price-main{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,8vw,3.8rem);font-weight:900;color:var(--gold);line-height:1;}
+.price-sup{font-size:1.15rem;font-family:'DM Sans',sans-serif;font-weight:700;vertical-align:super;}
+.price-note{font-size:0.77rem;color:rgba(255,255,255,0.3);margin-top:6px;margin-bottom:30px;}
+.offer-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:30px;text-align:left;}
+.offer-list li{display:flex;align-items:center;gap:10px;font-size:0.87rem;color:rgba(255,255,255,0.68);}
+.offer-list .chk{color:var(--gold);}
+.btn-buy{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--navy);font-size:1rem;font-weight:800;padding:16px 36px;border-radius:3px;text-decoration:none;width:100%;letter-spacing:0.02em;transition:all 0.22s;border:none;cursor:pointer;}
+.btn-buy:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 16px 44px rgba(201,168,76,0.38);}
+.offer-lock{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;font-size:0.75rem;color:rgba(255,255,255,0.3);}
+
+/* FAQ */
+.faq-list{margin-top:44px;}
+.faq-item{border-bottom:1px solid #eae7e0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-weight:600;font-size:0.94rem;color:var(--navy);gap:16px;user-select:none;transition:color 0.2s;}
+.faq-q:hover{color:var(--gold);}
+.faq-icon{width:22px;height:22px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.84rem;color:var(--gold);flex-shrink:0;transition:transform 0.3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{font-size:0.89rem;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:18px;}
+
+/* FINAL CTA */
+.final-cta{background:var(--gold);padding:72px 24px;text-align:center;}
+.final-cta .sec-label{color:var(--navy);}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);font-weight:900;color:var(--navy);line-height:1.12;margin-bottom:14px;}
+.final-cta p{font-size:0.98rem;color:rgba(15,30,53,0.66);margin-bottom:34px;max-width:460px;margin-left:auto;margin-right:auto;}
+.btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--gold);font-size:1rem;font-weight:800;padding:16px 42px;border-radius:3px;text-decoration:none;letter-spacing:0.02em;transition:all 0.22s;border:2px solid var(--navy);}
+.btn-dark:hover{background:var(--navy-light);transform:translateY(-2px);box-shadow:0 14px 38px rgba(15,30,53,0.28);}
+
+/* FOOTER */
+footer{background:var(--navy);padding:44px 24px;text-align:center;border-top:1px solid rgba(201,168,76,0.1);}
+.footer-brand{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;color:var(--gold);margin-bottom:3px;}
+.footer-tag{font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:16px;}
+footer p{font-size:0.76rem;color:rgba(255,255,255,0.26);line-height:1.7;}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:2px solid var(--gold);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:999;transform:translateY(100%);transition:transform 0.4s ease;}
+.sticky.on{transform:translateY(0);}
+.sticky-left{display:flex;flex-direction:column;gap:1px;}
+.sticky-title{font-family:'Playfair Display',serif;font-size:0.88rem;font-weight:700;color:var(--white);}
+.sticky-line{font-size:0.7rem;color:rgba(255,255,255,0.36);font-style:italic;}
+.btn-sticky{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:0.84rem;font-weight:800;padding:11px 22px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:all 0.2s;}
+.btn-sticky:hover{background:var(--gold-light);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .book-wrap{grid-template-columns:1fr;gap:32px;}
+  .book-cover{max-width:190px;margin:0 auto;}
+  .forwho-grid{grid-template-columns:1fr;}
+  .offer-card{padding:36px 20px;}
+  .sticky{flex-direction:column;text-align:center;}
+  .nav-cta{display:none;}
+}
+@media(max-width:420px){
+  .hero{padding:64px 20px 60px;}
+  .sec{padding:60px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" style="text-decoration:none;">
+    <span class="brand-name">LinguagemMestra</span>
+    <span class="brand-sub">Comunicação · Oratória · Estudos</span>
+  </a>
+  <a href="#oferta" class="nav-cta">Quero o eBook →</a>
+</nav>
+
+<!-- ALERT -->
+<div class="alert-bar">⚡ Lançamento — acesso imediato após a compra</div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Ilustração decorativa: microfone estilizado -->
+  <svg class="hero-bg-art" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Microfone corpo -->
+    <rect x="110" y="20" width="80" height="140" rx="40" fill="white"/>
+    <!-- Grade do microfone -->
+    <line x1="110" y1="70" x2="190" y2="70" stroke="white" stroke-width="2" opacity="0.4"/>
+    <line x1="110" y1="90" x2="190" y2="90" stroke="white" stroke-width="2" opacity="0.4"/>
+    <line x1="110" y1="110" x2="190" y2="110" stroke="white" stroke-width="2" opacity="0.4"/>
+    <line x1="110" y1="130" x2="190" y2="130" stroke="white" stroke-width="2" opacity="0.4"/>
+    <!-- Pescoço do microfone -->
+    <rect x="143" y="160" width="14" height="60" rx="7" fill="white"/>
+    <!-- Base em arco -->
+    <path d="M80 160 Q80 240 150 240 Q220 240 220 160" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <!-- Haste vertical -->
+    <rect x="143" y="240" width="14" height="80" rx="7" fill="white"/>
+    <!-- Base horizontal -->
+    <rect x="90" y="315" width="120" height="12" rx="6" fill="white"/>
+    <!-- Ondas sonoras -->
+    <path d="M60 80 Q40 90 40 110 Q40 130 60 140" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M35 65 Q5 85 5 110 Q5 135 35 155" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.3"/>
+    <path d="M240 80 Q260 90 260 110 Q260 130 240 140" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M265 65 Q295 85 295 110 Q295 135 265 155" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.3"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-kicker">📘 eBook de Comunicação Profissional</div>
+    <h1 class="hero-title">O Código<span class="gline">da Clareza</span></h1>
+    <p class="hero-tagline">Quem não se expressa, não avança.</p>
+    <p class="hero-desc">30 técnicas práticas para <strong>destravar a fala</strong>, eliminar o branco mental e falar com autoridade — mesmo que hoje você trave, gagueje ou perca o fio quando mais importa.</p>
+    <div class="hero-actions">
+      <a href="#oferta" class="btn-primary">Quero destravar minha fala <span class="arr">→</span></a>
+      <span class="hero-micro">Por apenas R$ 27,00 · PDF + EPUB · Acesso imediato</span>
+    </div>
+    <div class="hero-rule"></div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="sec sec-white">
+  <div class="container">
+    <p class="sec-label reveal">Você se reconhece aqui?</p>
+    <h2 class="sec-title reveal">Você sabe o que quer dizer.<br/>O problema é na hora de dizer.</h2>
+    <p class="sec-lead reveal">O medo não é frescura. Não é falta de preparo. É biologia — e pode ser hackeado. Mas enquanto você não age, o custo se acumula em silêncio.</p>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">🧠</div>
+        <h4>O branco que congela</h4>
+        <p>Você sabia o que ia falar. Na hora H, a mente apaga. Você sai da reunião com a resposta que devia ter dado — tarde demais.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">😰</div>
+        <h4>O nervoso que trai</h4>
+        <p>Coração acelera, voz treme, mãos suam. O corpo inteiro avisa que algo está errado — e o público percebe antes de você.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🎤</div>
+        <h4>A credibilidade que some</h4>
+        <p>Você domina o assunto. Mas na hora de apresentar, parece inseguro. E quem fala bem leva o crédito que deveria ser seu.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">💼</div>
+        <h4>As oportunidades que passam</h4>
+        <p>A promoção que foi para outro. O cliente que não fechou. O projeto que não saiu do papel porque a apresentação não convenceu.</p>
+      </div>
+    </div>
+    <div class="pain-quote reveal">
+      <p>Profissionais com alta capacidade de expressão oral ganham, em média, <strong>até 20% a mais</strong> do que colegas igualmente competentes. Em 30 anos de carreira, isso representa <strong>centenas de milhares de reais</strong> deixados na mesa — em silêncio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="sec sec-cream">
+  <div class="container">
+    <div class="book-wrap">
+      <div class="book-cover reveal">
+        <p class="bc-brand">LinguagemMestra</p>
+        <p class="bc-title">O Código<span>da Clareza</span></p>
+        <p class="bc-sub">30 Técnicas Práticas<br/>para Destravar a Fala</p>
+        <p class="bc-author">Glauber Gonçalves</p>
+      </div>
+      <div class="reveal">
+        <p class="sec-label">O eBook</p>
+        <h2 class="sec-title">Tudo que você precisa.<br/>Nada que você não vai usar.</h2>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8;">Não é um livro de teoria. É um guia de campo para quem precisa de resultado rápido — e pode aplicar cada técnica ainda hoje.</p>
+        <ul class="feats">
+          <li><span class="fdot">✓</span><span><strong>4 capítulos + Introdução e Conclusão</strong> — densos, diretos, sem enrolação</span></li>
+          <li><span class="fdot">✓</span><span><strong>8 técnicas com passo a passo</strong> aplicáveis imediatamente</span></li>
+          <li><span class="fdot">✓</span><span><strong>Boxes "Desafio do Mestre"</strong> — exercício prático de 24h: do iniciante ao avançado, cada desafio te coloca em ação no mesmo dia</span></li>
+          <li><span class="fdot">✓</span><span><strong>A neurociência do medo</strong> explicada de forma simples</span></li>
+          <li><span class="fdot">✓</span><span><strong>Plano de 21 dias</strong> para transformação real e duradoura</span></li>
+          <li><span class="fdot">✓</span><span><strong>PDF + EPUB</strong> — celular, tablet, Kindle ou computador</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNIQUES -->
+<section class="sec sec-navy">
+  <div class="container">
+    <p class="sec-label reveal">O conteúdo</p>
+    <h2 class="sec-title reveal">As 8 técnicas que mudam a sua comunicação</h2>
+    <p class="sec-lead reveal">Cada técnica resolve um problema real. Nenhuma exige talento inato — só prática deliberada.</p>
+    <div class="tech-grid reveal">
+      <div class="tech-item"><p class="tech-num">01</p><h4>Respiração 4-4-8</h4><p>Reduza o cortisol em 60 segundos antes de qualquer fala</p></div>
+      <div class="tech-item"><p class="tech-num">02</p><h4>Postura de Poder</h4><p>2 minutos que mudam sua química cerebral e sua presença</p></div>
+      <div class="tech-item"><p class="tech-num">03</p><h4>A Tríade</h4><p>Organize qualquer fala em Contexto, Conteúdo e Conclusão</p></div>
+      <div class="tech-item"><p class="tech-num">04</p><h4>Âncoras Visuais</h4><p>Nunca mais esqueça o roteiro — mesmo sob pressão total</p></div>
+      <div class="tech-item"><p class="tech-num">05</p><h4>Triângulo Visual</h4><p>Crie conexão real com qualquer público pelo olhar</p></div>
+      <div class="tech-item"><p class="tech-num">06</p><h4>Aquecimento Vocal</h4><p>3 minutos que preparam a voz para soar com autoridade</p></div>
+      <div class="tech-item"><p class="tech-num">07</p><h4>Método Feynman</h4><p>Transforme conhecimento lido em domínio real do assunto</p></div>
+      <div class="tech-item"><p class="tech-num">08</p><h4>Diário do Comunicador</h4><p>21 dias que valem 6 meses de tentativa e erro</p></div>
+    </div>
+    <div style="text-align:center" class="reveal">
+      <a href="#oferta" class="btn-primary">Quero as 8 técnicas agora <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="sec sec-white">
+  <div class="container">
+    <p class="sec-label reveal">Para quem é?</p>
+    <h2 class="sec-title reveal">Este eBook foi feito para você — ou não foi.</h2>
+    <div class="forwho-grid">
+      <div class="forwho-card fwy reveal">
+        <h3>✦ É para você se...</h3>
+        <ul>
+          <li><span class="chk">✓</span>Você trava ou fica em branco na hora de falar</li>
+          <li><span class="chk">✓</span>Suas ideias são boas, mas você não consegue transmiti-las</li>
+          <li><span class="chk">✓</span>Quer autoridade real em reuniões e apresentações</li>
+          <li><span class="chk">✓</span>Está cansado de perder espaço para quem fala bem mas sabe menos</li>
+          <li><span class="chk">✓</span>Quer resultado prático — não teoria vaga</li>
+        </ul>
+      </div>
+      <div class="forwho-card fwn reveal">
+        <h3>✕ Não é para você se...</h3>
+        <ul>
+          <li><span class="crs">✕</span>Você já é um comunicador fluente e confiante</li>
+          <li><span class="crs">✕</span>Busca um curso longo com horas de vídeo</li>
+          <li><span class="crs">✕</span>Quer motivação sem comprometimento com a prática</li>
+          <li><span class="crs">✕</span>Não está disposto a aplicar as técnicas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec sec-cream">
+  <div class="container">
+    <p class="sec-label reveal">O que dizem os leitores</p>
+    <h2 class="sec-title reveal">Resultados reais. Pessoas reais.</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-stars">★★★★★</p>
+        <p class="testi-text">"Apliquei a Respiração 4-4-8 antes de uma reunião com o conselho. Pela primeira vez em anos, senti que estava no controle. Fechei o projeto."</p>
+        <div class="testi-author"><div class="testi-av">R</div><div><p class="testi-name">Ricardo M.</p><p class="testi-role">Gerente de Projetos, SP</p></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-stars">★★★★★</p>
+        <p class="testi-text">"A Tríade mudou minha forma de apresentar relatórios. Antes eu enrolava. Agora vou direto ao ponto e as pessoas prestam atenção."</p>
+        <div class="testi-author"><div class="testi-av">C</div><div><p class="testi-name">Camila F.</p><p class="testi-role">Analista Financeira, RJ</p></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-stars">★★★★★</p>
+        <p class="testi-text">"Nunca imaginei que R$ 27 mudariam minha carreira. Usei o Método Feynman e recebi o primeiro elogio público da minha vida profissional."</p>
+        <div class="testi-author"><div class="testi-av">T</div><div><p class="testi-name">Thiago A.</p><p class="testi-role">Dev Sênior, MG</p></div></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="sec sec-navy" id="oferta">
+  <div class="container">
+    <div class="offer-card reveal">
+      <span class="offer-badge">Oferta de Lançamento</span>
+      <h2 class="offer-title">O Código <span>da Clareza</span></h2>
+      <p class="offer-sub">eBook completo · PDF + EPUB · Acesso imediato via Kiwify</p>
+      <p class="price-from">De R$ 67,00</p>
+      <p class="price-main"><span class="price-sup">R$</span> 27<span style="font-size:1.8rem;font-family:'DM Sans',sans-serif;font-weight:700;">,00</span></p>
+      <p class="price-note">Pagamento único · Sem mensalidade · Seu para sempre</p>
+      <ul class="offer-list">
+        <li><span class="chk">✓</span>eBook completo em PDF — leitura premium</li>
+        <li><span class="chk">✓</span>EPUB para Kindle, Apple Books e celular</li>
+        <li><span class="chk">✓</span>8 técnicas com passo a passo detalhado</li>
+        <li><span class="chk">✓</span>Desafios práticos de 24h por capítulo</li>
+        <li><span class="chk">✓</span>Plano de transformação em 21 dias</li>
+        <li><span class="chk">✓</span>Acesso imediato após o pagamento</li>
+      </ul>
+      <a href="https://kiwify.com.br/SEU-LINK-AQUI" target="_blank" class="btn-buy">Quero destravar minha fala agora →</a>
+      <div class="offer-lock">🔒 Compra 100% segura via Kiwify · Pagamento protegido</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-white">
+  <div class="container">
+    <p class="sec-label reveal">Dúvidas frequentes</p>
+    <h2 class="sec-title reveal">Perguntas &amp; Respostas</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">Como recebo o eBook após a compra? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Imediatamente após o pagamento confirmado, você recebe um e-mail automático da Kiwify com o link para baixar o PDF e o EPUB. Acesso instantâneo, 24h por dia.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funciona para quem é muito tímido ou introvertido? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Sim — especialmente para introvertidos. As técnicas trabalham com a sua fisiologia e a sua forma de pensar. Introvertidos que dominam comunicação têm vantagem enorme: pensam antes de falar e constroem argumentos sólidos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo vejo resultado? <span class="faq-icon">+</span></div>
+        <div class="faq-a">A Respiração 4-4-8 e a Postura de Poder funcionam na mesma sessão em que você aplica. Para transformação consistente, o Plano de 21 dias é suficiente para criar novos padrões de comunicação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Preciso ter experiência prévia com oratória? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Não. O livro foi escrito para pessoas sem nenhuma base em comunicação. Se você já tem alguma experiência, as técnicas vão elevar seu nível para o próximo patamar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O conteúdo é só para apresentações formais? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Não. As técnicas se aplicam a reuniões, conversas difíceis, entrevistas de emprego, networking, vendas e qualquer situação em que você precisa se expressar com clareza e autoridade.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não gostar? Tem garantia? <span class="faq-icon">+</span></div>
+        <div class="faq-a">A Kiwify oferece política de reembolso conforme os termos da plataforma. Leia as condições diretamente na página de checkout antes de finalizar a compra.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <p class="sec-label">A decisão é sua</p>
+    <h2>Quem não se expressa,<br/>não avança.</h2>
+    <p>Por R$ 27,00 você tem acesso a tudo que precisa para mudar isso — hoje. Não amanhã. Hoje.</p>
+    <a href="#oferta" class="btn-dark">Quero o eBook agora →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">LinguagemMestra</p>
+  <p class="footer-tag">Comunicação · Oratória · Estudos</p>
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.38);margin-bottom:4px;">Autor: <strong style="color:var(--gold);">Glauber Gonçalves</strong></p>
+  <p>Quem não se expressa, não avança.</p>
+  <p style="margin-top:10px;">© 2025 LinguagemMestra · Todos os direitos reservados<br/>Dúvidas? Entre em contato pelo e-mail cadastrado na plataforma de vendas.</p>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div class="sticky-left">
+    <span class="sticky-title">O Código da Clareza</span>
+    <span class="sticky-line">Quem não se expressa, não avança.</span>
+  </div>
+  <a href="#oferta" class="btn-sticky">R$ 27,00 — Quero agora →</a>
+</div>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 70);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('sticky').classList.toggle('on', window.scrollY > 500);
+});
+
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
